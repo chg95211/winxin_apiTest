@@ -1,0 +1,38 @@
+# 新增部门
+- given:
+    queryParam:
+    - key: "corpid"
+      value: "ww232a7a71d5cea05a"
+    - key: "corpsecret"
+      value: "E91qMAdjI_ZA_37yLLltOdn6Kn78EJI_yooMchqjDS8"
+    headers:
+    - key: "content-type"
+      value: "json"
+  when:
+    request: "get"
+    url: "/cgi-bin/gettoken"
+  then:
+    statusCode: 200
+    body:
+    - jsonPath: "errcode"
+      expect: 0
+# 发送消息
+- given:
+    queryParam:
+    - key: "access_token" #调用接口凭证
+      value: "ww232a7a71d5cea05a"
+    - key: "name" #部门名称。长度限制为1~32个字符，字符不能包括\:?”<>｜
+      value: "测试部"
+    - key: "parentid" #父部门id，32位整型
+      value: "1"
+    headers:
+    - key: "content-type"
+      value: "json"
+  when:
+    request: "post"
+    url: "/cgi-bin/department/create"
+  then:
+    statusCode: 200
+    body:
+    - jsonPath: "errcode"
+      expect: 0

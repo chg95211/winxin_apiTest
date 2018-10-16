@@ -1,0 +1,28 @@
+
+# 发送消息
+- given:
+    queryParam:
+    - key: "touser"
+      value: "@all"
+    - key: "toparty"
+      value: "@all"
+    - key: "msgtype"
+      value: "text"
+    - key: "agentid"
+      value: "1000002"
+    - key: "safe"
+      value: "0"
+    - key: "text"
+      value:
+        content: "你的快递已到，请携带工卡前往邮件中心领取。聪明避开排队a。"
+    headers:
+    - key: "content-type"
+      value: "application/json"
+  when:
+    request: "post"
+    url: "/cgi-bin/message/send"
+  then:
+    statusCode: 200
+    body:
+    - jsonPath: "errcode"
+      expect: 0

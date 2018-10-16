@@ -1,0 +1,11 @@
+---
+hosts:
+  testing: "https://qyapi.weixin.qq.com"
+  onLine: "127.0.0.1"
+  shabox: "1270.0.11"
+env: "testing"
+
+corpid: "ww232a7a71d5cea05a"
+corpsecret: "E91qMAdjI_ZA_37yLLltOdn6Kn78EJI_yooMchqjDS8"
+
+httpTestFilePath: ""
