@@ -4,3 +4,5 @@
 ```
 基于rest-assured的junit版本接口测试框架
 ```
+
+![](https://github.com/yan-weijie/winxin_apiTest/blob/master/image/1539660143782.jpg?raw=true)
